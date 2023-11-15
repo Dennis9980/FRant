@@ -6,7 +6,7 @@ const restoListCard = (restaurant) => `
         <p class="city">${restaurant.city}</p>
         <p class="rating"><i class="fa-solid fa-star"></i>${restaurant.rating}</p>
         <div class="restaurant-info">
-            <a href="#/resto/${restaurant.id}" class="link-to-detail">
+            <a href="#/detail/${restaurant.id}" class="link-to-detail">
                 <h2 class="restaurant-title" tabindex="0" >${restaurant.name}</h2>
             </a>
             <p class="restaurant-desc">${restaurant.description}</p>
@@ -29,13 +29,13 @@ const restoDetail = (restaurant) => `
             <div class="detail-food">
                 <h2>food</h2>
                 <ul>
-                ${restaurant.menu.foods.map((food, index) => `<li>${index + 1}) ${food.name}</li>`).join('')}
+                ${restaurant.menus.foods.map((food, index) => `<li>${index + 1}) ${food.name}</li>`).join('')}
                 </ul>
             </div>
             <div class="detail-drinks">
                 <h2>Drinks</h2>
                 <ul>
-                    ${restaurant.menu.drinks.map((drink, index) => `<li>${index + 1}) ${drink.name}</li>`).join('')}
+                    ${restaurant.menus.drinks.map((drink, index) => `<li>${index + 1}) ${drink.name}</li>`).join('')}
                 </ul>
             </div>
         </div>
