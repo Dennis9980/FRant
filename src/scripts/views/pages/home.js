@@ -1,5 +1,5 @@
 import RestoSource from '../../data/resto-source';
-import createRestoItemTemplate from '../templates/template-creator';
+import templateCreator from '../templates/template-creator';
 
 const Home = {
   async render() {
@@ -18,7 +18,7 @@ const Home = {
     console.log(resto);
     const restoContainer = document.querySelector('#restaurants');
     resto.forEach((restaurant) => {
-      restoContainer.innerHTML += createRestoItemTemplate.restoListCard(restaurant);
+      restoContainer.innerHTML += templateCreator.restoListCard(restaurant);
     });
   },
 };
