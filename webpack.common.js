@@ -38,17 +38,6 @@ module.exports = {
     }),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, 'src/public/'),
-          to: path.resolve(__dirname, 'dist/'),
-        },
-      ],
-    }),
-    new WorkboxWebpackPlugin.GenerateSW({
-      swDest: './sw.bundle.js',
       runtimeCaching: [
         {
           urlPattern: ({ url }) => url.href.startsWith('https://restaurant-api.dicoding.dev/'),
@@ -63,6 +52,14 @@ module.exports = {
           options: {
             cacheName: 'restaurant-image-api',
           },
+        },
+      ],
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/public/'),
+          to: path.resolve(__dirname, 'dist/'),
         },
       ],
     }),

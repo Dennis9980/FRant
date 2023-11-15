@@ -16,7 +16,6 @@ const restoListCard = (restaurant) => `
 
 const restoDetail = (restaurant) => `
     <div class="resto-detail">
-        <h1>Detail</h1>
         <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" class="resto-img">
             <ul>
                 <li><h2>${restaurant.name}</h2></li>
