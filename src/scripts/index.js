@@ -1,6 +1,7 @@
 import 'regenerator-runtime';
 import '../styles/style.scss';
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   button: document.querySelector('#hamburgMenu'),
@@ -14,4 +15,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
