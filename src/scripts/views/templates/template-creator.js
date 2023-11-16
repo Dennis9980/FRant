@@ -4,7 +4,7 @@ const restoListCard = (restaurant) => `
     <article class="restaurant-list">
         <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
         <p class="city">${restaurant.city}</p>
-        <p class="rating">⭐️ </i>${restaurant.rating}</p>
+        <p class="rating">⭐️ ${restaurant.rating}</p>
         <div class="restaurant-info">
             <a href="#/detail/${restaurant.id}" class="link-to-detail">
                 <h2 class="restaurant-title" tabindex="0" >${restaurant.name}</h2>
@@ -19,7 +19,7 @@ const restoDetail = (restaurant) => `
         <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" class="resto-img">
             <ul>
                 <li><h2>${restaurant.name} - ${restaurant.city}</h2></li>
-                <li><i class="fa fa-map-marker"></i> ${restaurant.address}</li>
+                <li><i class="fa fa-map-marker" alt='Location'></i> ${restaurant.address}</li>
                 <li class="detail-desc">${restaurant.description}</li>
             </ul>
     </div>
@@ -43,11 +43,9 @@ const restoDetail = (restaurant) => `
         <div class="detail-review">
             ${restaurant.customerReviews.map((review) => `
                 <div class="review-item">
-                    <div class="review-header">
-                        <p class="reviewer">${review.name}</p>
-                        <p class="reviewer-date">${review.date}</p>
-                        <p class="reviewer-content">${review.review}</p>
-                    </div>
+                    <p class="reviewer">${review.name}</p>
+                    <p class="reviewer-date">${review.date}</p>
+                    <p class="reviewer-content">${review.review}</p>
                 </div>
             `).join('')}
         </div>
