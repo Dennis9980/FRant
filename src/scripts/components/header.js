@@ -15,7 +15,7 @@ class Header extends HTMLElement {
                 <li class="nav-item"><a href="#exploreRestaurant">Explore</a></li>
                 <li class="nav-item"><a href="#/favorite">Favorite</a></li>
                 <li class="nav-item">
-                <a href="https://github.com/Dennis9980">About Us</a>
+                <a href="https://github.com/Dennis9980" target="_blank">About Us</a>
                 </li>
             </nav>
             </header>

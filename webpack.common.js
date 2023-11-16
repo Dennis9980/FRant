@@ -55,7 +55,7 @@ module.exports = {
         },
         {
           urlPattern: ({ url }) => url.href.startsWith('https://use.fontawesome.com/b070c8f1df.js'),
-          handler: 'StaleWhileRevalidate',
+          handler: 'CacheFirst',
           options: {
             cacheName: 'fontawesome',
           },
