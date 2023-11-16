@@ -53,6 +53,13 @@ module.exports = {
             cacheName: 'restaurant-image-api',
           },
         },
+        {
+          urlPattern: ({ url }) => url.href.startsWith('https://use.fontawesome.com/b070c8f1df.js'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'fontawesome',
+          },
+        },
       ],
     }),
     new CopyWebpackPlugin({

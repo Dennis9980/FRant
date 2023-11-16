@@ -4,7 +4,7 @@ const restoListCard = (restaurant) => `
     <article class="restaurant-list">
         <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
         <p class="city">${restaurant.city}</p>
-        <p class="rating"><i class="fa-solid fa-star"></i>${restaurant.rating}</p>
+        <p class="rating">⭐️ </i>${restaurant.rating}</p>
         <div class="restaurant-info">
             <a href="#/detail/${restaurant.id}" class="link-to-detail">
                 <h2 class="restaurant-title" tabindex="0" >${restaurant.name}</h2>
@@ -18,29 +18,38 @@ const restoDetail = (restaurant) => `
     <div class="resto-detail">
         <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" class="resto-img">
             <ul>
-                <li><h2>${restaurant.name}</h2></li>
-                <li>${restaurant.city}city</li>
-                <li>${restaurant.address}adress</li>
-                <li>${restaurant.description}description</li>
+                <li><h2>${restaurant.name} - ${restaurant.city}</h2></li>
+                <li><i class="fa fa-map-marker"></i> ${restaurant.address}</li>
+                <li class="detail-desc">${restaurant.description}</li>
             </ul>
-        <h1>Menu</h1>
+    </div>
+    <div>
+        <h2 class="explore-label">Menu</h2>
         <div class="menu">
-            <div class="detail-food">
-                <h2>food</h2>
+            <div class="card-menu">
+                <h2>Food</h2>
                 <ul>
                 ${restaurant.menus.foods.map((food, index) => `<li>${index + 1}) ${food.name}</li>`).join('')}
                 </ul>
             </div>
-            <div class="detail-drinks">
+            <div class="card-menu">
                 <h2>Drinks</h2>
                 <ul>
                     ${restaurant.menus.drinks.map((drink, index) => `<li>${index + 1}) ${drink.name}</li>`).join('')}
                 </ul>
             </div>
         </div>
-        <h1>Reviews</h1>
+        <h2 class="explore-label">Reviews</h2>
         <div class="detail-review">
-
+            ${restaurant.customerReviews.map((review) => `
+                <div class="review-item">
+                    <div class="review-header">
+                        <p class="reviewer">${review.name}</p>
+                        <p class="reviewer-date">${review.date}</p>
+                        <p class="reviewer-content">${review.review}</p>
+                    </div>
+                </div>
+            `).join('')}
         </div>
     </div>
 `;

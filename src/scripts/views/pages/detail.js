@@ -9,7 +9,7 @@ const Detail = {
       <section class="content">
         <div id="exploreRestaurant" class="explore">
           <h1 tabindex="0" class="explore-label">Detail Restaurant</h1>
-          <div id="detailResto" class="restaurants"></div>
+          <div id="detailResto"></div>
           <div id="likeButtonContainer"></div>
         </div>
       </section>
@@ -30,6 +30,7 @@ const Detail = {
         pictureId: restaurant.pictureId,
         name: restaurant.name,
         city: restaurant.city,
+        rating: restaurant.rating,
         description: restaurant.description,
       },
     });
