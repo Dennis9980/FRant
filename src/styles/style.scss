@@ -193,6 +193,8 @@ main {
 .link-to-detail {
   text-decoration: none;
   color: black;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .restaurant-title {
@@ -232,7 +234,7 @@ main {
     object-fit: cover;
     border-radius: 15px;
   }
-  li {
+  ul {
     margin-bottom: 10px;
     list-style-type: none;
   }
@@ -284,6 +286,8 @@ main {
 }
 
 .like {
+  min-width: 44px;
+  min-height: 44px;
   width: 55px;
   height: 55px;
   display: flex;
@@ -339,6 +343,19 @@ footer {
 
   .content {
     padding: 0 20px 0 20px;
+  }
+
+  .resto-detail{
+    grid-template-columns: 100%;
+  }
+
+  .menu{
+    margin: 20px 0 20px 0;
+    grid-template-columns: 100%;
+  }
+
+  .detail-review{
+    grid-template-columns: 100%;
   }
 }
 

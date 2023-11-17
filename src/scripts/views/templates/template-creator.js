@@ -16,7 +16,7 @@ const restoListCard = (restaurant) => `
 
 const restoDetail = (restaurant) => `
     <div class="resto-detail">
-        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" class="resto-img">
+        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
             <ul>
                 <li><h2>${restaurant.name} - ${restaurant.city}</h2></li>
                 <li><i class="fa fa-map-marker" alt='Location'></i> ${restaurant.address}</li>
