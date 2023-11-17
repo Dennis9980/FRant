@@ -6,7 +6,7 @@ const restoListCard = (restaurant) => `
         <p class="city">${restaurant.city}</p>
         <p class="rating">⭐️ ${restaurant.rating}</p>
         <div class="restaurant-info">
-            <a href="#/detail/${restaurant.id}" class="link-to-detail">
+            <a href="#/detail/${restaurant.id}">
                 <h2 class="restaurant-title" tabindex="0" >${restaurant.name}</h2>
             </a>
             <p class="restaurant-desc">${restaurant.description}</p>
