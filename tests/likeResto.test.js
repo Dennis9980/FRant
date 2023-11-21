@@ -31,7 +31,7 @@ describe('Liking A Restaurant', () => {
     const restaurant = await FavoriteRestoIdb.getResto(1);
     expect(restaurant).toEqual({ id: 1 });
 
-    await FavoriteRestoIdb.deleteMovie(1);
+    await FavoriteRestoIdb.deleteResto(1);
   });
 
   it('should not add a restaurant again when its already liked', async () => {
