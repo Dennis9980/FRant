@@ -52,18 +52,18 @@ const restoDetail = (restaurant) => `
     </div>
 `;
 
-const likeButtonTemplate = () => `
+const likeRestaurantButtonTemplate = () => `
   <button aria-label="like this restaurant" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
-const likedButtonTemplate = () => `
+const unlikeRestaurantButtonTemplate = () => `
   <button aria-label="unlike this restaurant" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;
 
 export default {
-  restoListCard, restoDetail, likeButtonTemplate, likedButtonTemplate,
+  restoListCard, restoDetail, likeRestaurantButtonTemplate, unlikeRestaurantButtonTemplate,
 };
