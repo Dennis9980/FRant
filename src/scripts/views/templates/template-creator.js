@@ -1,15 +1,15 @@
 import CONFIG from '../../globals/config';
 
 const restoListCard = (restaurant) => `
-    <article class="restaurant restaurant-list">
-        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
+    <article class="restaurant-list">
+        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
         <p class="city">${restaurant.city}</p>
-        <p class="rating">⭐️ ${restaurant.rating || '-'}</p>
+        <p class="rating">⭐️ ${restaurant.rating}</p>
         <div class="restaurant-info">
             <a href="#/detail/${restaurant.id}">
-                <h2 class="restaurant-title" tabindex="0" >${restaurant.name || '-'}</h2>
+                <h2 class="restaurant-title" tabindex="0" >${restaurant.name}</h2>
             </a>
-            <p class="restaurant-desc">${restaurant.description || '-'}</p>
+            <p class="restaurant-desc">${restaurant.description}</p>
         </div>
     </article>
 `;
