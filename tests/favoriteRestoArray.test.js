@@ -32,7 +32,7 @@ const FavoriteRestoArray = {
     favoriteResto.push(restaurant);
   },
 
-  deleterestaurant(id) {
+  deleteResto(id) {
     // cara boros menghapus film dengan meng-copy film yang ada
     // kecuali film dengan id == id
     favoriteResto = favoriteResto.filter((restaurant) => restaurant.id != id);

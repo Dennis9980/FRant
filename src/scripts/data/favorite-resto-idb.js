@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-empty-function */
 import { openDB } from 'idb';
 import CONFIG from '../globals/config';
 
@@ -30,6 +32,8 @@ const FavoriteRestoIdb = {
   },
   async deleteResto(id) {
     return (await dbPromise).delete(OBJECT_STORE_NAME, id);
+  },
+  async searchRestaurants(query) {
   },
 };
 
