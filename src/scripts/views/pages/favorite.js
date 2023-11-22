@@ -1,7 +1,7 @@
 import FavoriteRestoIdb from '../../data/favorite-resto-idb';
 import templateCreator from '../templates/template-creator';
 
-const Favorit = {
+const Favorite = {
   async render() {
     return `
         <section class="content">
@@ -15,7 +15,6 @@ const Favorit = {
 
   async afterRender() {
     const resto = await FavoriteRestoIdb.getAllResto();
-    console.log(resto);
     const restaurantsContainer = document.querySelector('#restaurants');
 
     resto.forEach((restaurant) => {
@@ -24,4 +23,4 @@ const Favorit = {
   },
 };
 
-export default Favorit;
+export default Favorite;
