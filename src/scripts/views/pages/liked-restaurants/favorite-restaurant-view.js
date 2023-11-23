@@ -6,18 +6,11 @@ class FavoriteRestoView {
     return `
         <section class="content">
           <div id="exploreRestaurant" class="explore">
-            <input id="query" type="text">
             <h1 tabindex="0" class="explore-label">Favorite Restaurants</h1>
               <div id="restaurants" class="restaurants"></div>
           </div>
         </section>
       `;
-  }
-
-  runWhenUserIsSearching(callback) {
-    document.getElementById('query').addEventListener('change', (event) => {
-      callback(event.target.value);
-    });
   }
 
   showRestaurants(restaurants) {
