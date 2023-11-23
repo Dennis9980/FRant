@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const restoListCard = (restaurant) => `
     <article class="restaurant restaurant-list">
-        <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
+        <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL_SM + restaurant.pictureId}" alt="${restaurant.name || '-'}">
         <p class="city">${restaurant.city}</p>
         <p class="rating">⭐️ ${restaurant.rating || '-'}</p>
         <div class="restaurant-info">
