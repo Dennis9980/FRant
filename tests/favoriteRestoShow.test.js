@@ -19,7 +19,7 @@ describe('Showing all favorite restaurants', () => {
   describe('When no restaurants have been liked', () => {
     it('should ask for the favorite restaurants', () => {
       const favoriteRestaurants = {
-        getAllRestaurants: jest.fn().mockImplementation(() => []),
+        getAllResto: jest.fn().mockImplementation(() => []),
       };
 
       new FavoriteRestaurantShowPresenter({
@@ -27,7 +27,7 @@ describe('Showing all favorite restaurants', () => {
         favoriteRestaurants,
       });
 
-      expect(favoriteRestaurants.getAllRestaurants).toHaveBeenCalledTimes(1);
+      expect(favoriteRestaurants.getAllResto).toHaveBeenCalledTimes(1);
     });
 
     it('should show the information that no restaurants have been liked', (done) => {
@@ -37,7 +37,7 @@ describe('Showing all favorite restaurants', () => {
       });
 
       const favoriteRestaurants = {
-        getAllRestaurants: jest.fn().mockImplementation(() => []),
+        getAllResto: jest.fn().mockImplementation(() => []),
       };
 
       new FavoriteRestaurantShowPresenter({
@@ -54,7 +54,7 @@ describe('Showing all favorite restaurants', () => {
         done();
       });
       const favoriteRestaurants = {
-        getAllRestaurants: jest.fn().mockImplementation(() => [
+        getAllResto: jest.fn().mockImplementation(() => [
           {
             id: 11,
             title: 'A',

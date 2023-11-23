@@ -18,7 +18,7 @@ const restoDetail = (restaurant) => `
     <div class="resto-detail">
         <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
             <ul>
-                <li><h2>${restaurant.name} - ${restaurant.city}</h2></li>
+                <li><h2 class="resto-detail-title">${restaurant.name} - ${restaurant.city}</h2></li>
                 <li><i class="fa fa-map-marker" alt='Location'></i> ${restaurant.address}</li>
                 <li class="detail-desc">${restaurant.description}</li>
             </ul>

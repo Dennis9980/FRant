@@ -61,9 +61,9 @@ describe('Searching restaurants', () => {
       favoriteRestaurants.searchRestaurants.mockImplementation((query) => {
         if (query === 'resto a') {
           return [
-            { id: 111, title: 'resto abc' },
-            { id: 222, title: 'ada juga resto abcde' },
-            { id: 333, title: 'ini juga boleh resto a' },
+            { id: 111, name: 'resto abc' },
+            { id: 222, name: 'ada juga resto abcde' },
+            { id: 333, name: 'ini juga boleh resto a' },
           ];
         }
         return [];
