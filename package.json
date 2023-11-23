@@ -8,7 +8,8 @@
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist --port 9000",
     "test": "jest",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps",
+    "build-image": "node sharp.js"
   },
   "author": "",
   "license": "ISC",
@@ -37,8 +38,10 @@
     "playwright": "^1.40.0",
     "sass": "^1.69.5",
     "sass-loader": "^13.3.2",
+    "sharp": "^0.32.6",
     "style-loader": "^3.3.3",
     "webpack": "^5.89.0",
+    "webpack-bundle-analyzer": "^4.10.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.10.0",
@@ -46,6 +49,7 @@
   },
   "dependencies": {
     "idb": "^7.1.1",
+    "lazysizes": "^5.3.2",
     "regenerator-runtime": "^0.14.0",
     "workbox-window": "^7.0.0"
   }

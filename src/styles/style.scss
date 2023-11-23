@@ -96,7 +96,7 @@ body {
   align-items: center;
   min-height: 350px;
   width: 100%;
-  background-image: url("../public/hero-image_4.jpg");
+  background-image: url("../public/images/hero-image.jpg");
   background-position: center;
 }
 
@@ -343,6 +343,11 @@ footer {
     transform: translateX(0);
   }
 
+  .hero{
+    background-image: url('../public/images/hero-image-small.jpg');
+    background-position: center;
+  }
+
   .content {
     padding: 0 20px 0 20px;
   }
@@ -380,6 +385,9 @@ footer {
   }
   .content {
     padding: 0 20px 0 20px;
+  }
+  .hero{
+    background-image: url('../public/images/hero-image-medium.jpg');
   }
   .restaurants {
     grid-template-columns: repeat(2, 1fr);

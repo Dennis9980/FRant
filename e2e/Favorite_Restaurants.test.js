@@ -59,3 +59,11 @@ Scenario('Unliking one restaurant', async ({ I }) => {
   I.dontSeeElement('.restaurant-list');
   I.dontSeeElement('.restaurant-title');
 });
+
+Scenario('Review from customer', ({ I }) => {
+  I.amOnPage('/');
+  I.seeElement('a .restaurant-title');
+  I.click(locate('a .restaurant-title').first());
+
+  I.seeElement('.detail-review');
+});

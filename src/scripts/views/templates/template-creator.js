@@ -2,7 +2,7 @@ import CONFIG from '../../globals/config';
 
 const restoListCard = (restaurant) => `
     <article class="restaurant restaurant-list">
-        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
+        <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name || '-'}">
         <p class="city">${restaurant.city}</p>
         <p class="rating">⭐️ ${restaurant.rating || '-'}</p>
         <div class="restaurant-info">
@@ -16,7 +16,7 @@ const restoListCard = (restaurant) => `
 
 const restoDetail = (restaurant) => `
     <div class="resto-detail">
-        <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
+        <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
             <ul>
                 <li><h2 class="resto-detail-title">${restaurant.name} - ${restaurant.city}</h2></li>
                 <li><i class="fa fa-map-marker" alt='Location'></i> ${restaurant.address}</li>
