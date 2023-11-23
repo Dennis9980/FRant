@@ -3,12 +3,12 @@ import {
   describe, it, beforeEach, expect, jest,
 } from '@jest/globals';
 import FavoriteRestaurantShowPresenter from '../src/scripts/views/pages/liked-restaurants/favorite-restaurant-show-presenter';
-import FavoriteRestaurantSearchView from '../src/scripts/views/pages/liked-restaurants/favorite-restaurant-search-view';
+import FavoriteRestaurantView from '../src/scripts/views/pages/liked-restaurants/favorite-restaurant-view';
 
 describe('Showing all favorite restaurants', () => {
   let view;
   const renderTemplate = () => {
-    view = new FavoriteRestaurantSearchView();
+    view = new FavoriteRestaurantView();
     document.body.innerHTML = view.getTemplate();
   };
 
@@ -57,15 +57,15 @@ describe('Showing all favorite restaurants', () => {
         getAllRestaurants: jest.fn().mockImplementation(() => [
           {
             id: 11,
-            name: 'A',
-            rating: 3,
-            description: 'Sebuah resto A',
+            title: 'A',
+            vote_average: 3,
+            overview: 'Sebuah resto A',
           },
           {
             id: 22,
-            name: 'B',
-            rating: 4,
-            description: 'Sebuah resto B',
+            title: 'B',
+            vote_average: 4,
+            overview: 'Sebuah resto B',
           },
         ]),
       };

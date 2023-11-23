@@ -4,7 +4,7 @@ import {
   beforeEach, describe, expect, it, jest,
 } from '@jest/globals';
 import FavoriteRestoSeacrhPresenter from '../src/scripts/views/pages/liked-restaurants/favorite-resto-search-presenter';
-import FavoriteRestoSearchView from '../src/scripts/views/pages/liked-restaurants/favorite-restaurant-search-view';
+import FavoriteRestoView from '../src/scripts/views/pages/liked-restaurants/favorite-restaurant-view';
 
 describe('Searching restaurants', () => {
   let presenter;
@@ -19,7 +19,7 @@ describe('Searching restaurants', () => {
   };
 
   const setRestaurantSearchContainer = () => {
-    view = new FavoriteRestoSearchView();
+    view = new FavoriteRestoView();
     document.body.innerHTML = view.getTemplate();
   };
 
@@ -52,7 +52,7 @@ describe('Searching restaurants', () => {
     });
 
     it('should show the restaurants found by Favorite Restaurants', (done) => {
-      document.getElementById('resto-search-container').addEventListener('restaurants:searched:updated', () => {
+      document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
         expect(document.querySelectorAll('.restaurant-list').length).toEqual(3);
 
         done();
@@ -61,9 +61,9 @@ describe('Searching restaurants', () => {
       favoriteRestaurants.searchRestaurants.mockImplementation((query) => {
         if (query === 'resto a') {
           return [
-            { id: 111, name: 'resto abc' },
-            { id: 222, name: 'ada juga resto abcde' },
-            { id: 333, name: 'ini juga boleh resto a' },
+            { id: 111, title: 'resto abc' },
+            { id: 222, title: 'ada juga resto abcde' },
+            { id: 333, title: 'ini juga boleh resto a' },
           ];
         }
         return [];
@@ -74,9 +74,9 @@ describe('Searching restaurants', () => {
 
     it('should show the name of the restaurants found by Favorite Restaurants', (done) => {
       document
-        .getElementById('resto-search-container')
-        .addEventListener('restaurants:searched:updated', () => {
-          const restaurantTitles = document.querySelectorAll('.resto__title');
+        .getElementById('restaurants')
+        .addEventListener('restaurants:updated', () => {
+          const restaurantTitles = document.querySelectorAll('.restaurant-title');
 
           expect(restaurantTitles.item(0).textContent).toEqual('resto abc');
           expect(restaurantTitles.item(1).textContent).toEqual('ada juga resto abcde');
@@ -101,9 +101,9 @@ describe('Searching restaurants', () => {
     });
 
     it('should show - when the restaurant returned does not contain a title', (done) => {
-      document.getElementById('resto-search-container')
-        .addEventListener('restaurants:searched:updated', () => {
-          const restaurantTitles = document.querySelectorAll('.resto__title');
+      document.getElementById('restaurants')
+        .addEventListener('restaurants:updated', () => {
+          const restaurantTitles = document.querySelectorAll('.restaurant-title');
           expect(restaurantTitles.item(0).textContent)
             .toEqual('-');
 
@@ -149,7 +149,7 @@ describe('Searching restaurants', () => {
 
   describe('When no favorite restaurants could be found', () => {
     it('should show the empty message', (done) => {
-      document.getElementById('resto-search-container').addEventListener('restaurants:searched:updated', () => {
+      document.getElementById('restaurants').addEventListener('restaurants:updated', () => {
         expect(document.querySelectorAll('.resto-item__not__found').length).toEqual(1);
         done();
       });
@@ -158,8 +158,8 @@ describe('Searching restaurants', () => {
     });
 
     it('should not show any restaurant', (done) => {
-      document.getElementById('resto-search-container')
-        .addEventListener('restaurants:searched:updated', () => {
+      document.getElementById('restaurants')
+        .addEventListener('restaurants:updated', () => {
           expect(document.querySelectorAll('.restaurant-list').length).toEqual(0);
           done();
         });

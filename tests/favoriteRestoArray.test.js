@@ -35,19 +35,19 @@ const FavoriteRestoArray = {
   deleteResto(id) {
     // cara boros menghapus film dengan meng-copy film yang ada
     // kecuali film dengan id == id
-    favoriteResto = favoriteResto.filter((restaurant) => restaurant.id != id);
+    favoriteResto = favoriteResto.filter((restaurant) => restaurant.id !== id);
   },
 
   searchRestaurants(query) {
     return this.getAllResto()
       .filter((restaurant) => {
-        const loweredCaseRestaurantTitle = (restaurant.name || '-').toLowerCase();
+        const loweredCaseRestaurantTitle = (restaurant.title || '-').toLowerCase();
         const jammedRestaurantTitle = loweredCaseRestaurantTitle.replace(/\s/g, '');
 
         const loweredCaseQuery = query.toLowerCase();
         const jammedQuery = loweredCaseQuery.replace(/\s/g, '');
 
-        return jammedRestaurantTitle.indexOf(jammedQuery) != -1;
+        return jammedRestaurantTitle.indexOf(jammedQuery) !== -1;
       });
   },
 };

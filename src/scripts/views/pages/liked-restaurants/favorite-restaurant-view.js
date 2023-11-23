@@ -1,16 +1,14 @@
 /* eslint-disable class-methods-use-this */
 import templateCreator from '../../templates/template-creator';
 
-class FavoriteRestoSearchView {
+class FavoriteRestoView {
   getTemplate() {
     return `
         <section class="content">
           <div id="exploreRestaurant" class="explore">
             <input id="query" type="text">
             <h1 tabindex="0" class="explore-label">Favorite Restaurants</h1>
-            <div id="resto-search-container">
               <div id="restaurants" class="restaurants"></div>
-            </div>
           </div>
         </section>
       `;
@@ -34,7 +32,7 @@ class FavoriteRestoSearchView {
     }
     document.querySelector('.restaurants').innerHTML = html;
 
-    document.getElementById('resto-search-container').dispatchEvent(new Event('restaurants:searched:updated'));
+    document.getElementById('restaurants').dispatchEvent(new Event('restaurants:updated'));
   }
 
   // eslint-disable-next-line no-unused-vars
@@ -55,4 +53,4 @@ class FavoriteRestoSearchView {
   }
 }
 
-export default FavoriteRestoSearchView;
+export default FavoriteRestoView;
